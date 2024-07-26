@@ -1,0 +1,132 @@
+html {
+    overflow-x: hidden;
+  }
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    
+  }
+
+  .fatherDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  
+  .welcome {
+    background-color: #00B776;
+    height: 100vh;
+    width: 50%;
+    color: #E4E4E4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    padding: 10%;
+  }
+  .welcome h3 {
+    font-size: 40px;
+  }
+
+.parentForm {
+    margin: 5%;
+}
+.loginLogo {
+    color: #00B776;
+    font-weight: bolder;
+    font-size: 35px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+form {
+    margin-top: 15%;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+.form-group input {
+    height: 45px;
+    padding: 0 3%;
+    width: 100%;
+    /* border: 1px solid gray; */
+    border-radius: 5px;
+}
+.form-group input:focus {
+    outline: none;
+}
+.togglePar {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+.passwordToggleDiv {
+    /* border: 1px solid gray; */
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#togglePassword {
+    margin: 0 10px;
+}
+#comfirmPassword {
+    margin: 0 10px;
+}
+.infoDiv p{
+    font-size: 12px;
+    margin: 10px 0;
+    color: grey;
+}
+.forgotPasswordDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    width: 100%;
+}
+.forgotPasswordDiv button {
+    background-color: #00B776;
+    width: 100%;
+    color: white;
+    padding: 10px 0;
+    font-weight: bolder;
+    border-radius: 20px;
+}
+.forgotPasswordDiv button:focus {
+    outline: none;
+}
+.forgotPasswordDiv a {
+    color: #00B776;
+}
+.noAccount {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+@media (max-width: 700px) {
+    .fatherDiv {
+        display: block;
+    }
+    .welcome {
+        display: none;
+    }
+    .parentForm form {
+        width: 80%;
+        margin: auto;
+        margin-top: 15%;
+    }
+      
+}

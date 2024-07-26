@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Granite</title>
+    <!-- tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../login.css">
+    <link rel="stylesheet" href="../dashboard/dashboard.css">
+    <script src="https://kit.fontawesome.com/a17111d927.js" crossorigin="anonymous"></script>
+    <!-- font  -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,500&family=Maven+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- chart library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+      <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+
+
+<!-- Chatra {literal} -->
+<script>
+    (function(d, w, c) {
+        w.ChatraID = 'TdnoNukHRQz3TPF7a';
+        var s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = 'https://call.chatra.io/chatra.js';
+        if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+</script>
+<!-- /Chatra {/literal} -->
+</head>
+<body>
+  <header class="header bg-gray-100">
+    <div class="nav-container">
+        <a href="https://granite-finance.github.io/granite/" class="logo">GRANITE</a>
+        <nav class="nav">
+            <ul class="nav--ul__one">
+                <li class="nav-link"><a href="https://granite-finance.github.io/granite/">Home</a></li>
+                <li class="nav-link"><a href="https://granite-finance.github.io/granite/dashboard/add.html">Add money</a></li>
+                <li class="nav-link"><a href="https://granite-finance.github.io/granite/dashboard/withdraw.html">Withdraw</a></li>
+            </ul>
+            <ul class="nav--ul__two">
+                <!-- <li class="nav-link" id="link1"><a href="logIn.html">Log In</a></li> -->
+                <li class="nav-link" id="link2"><a href="" id="logOutBtn">Log Out</a></li>
+            </ul>
+        </nav>
+        <i class="fas fa-bars" id="toggleButton"></i>
+        <!-- <span class="hamburger-menu  material-symbols-outlined">menu</span> -->
+    </div>
+  </header>
+
+  <div class="adminHeader">
+    <div class="subAdminHeader1">
+        <img src="../img/profile.9a636b5a77f8748f92b1.png" alt="user">
+        <p id="userName"></p>
+    </div>
+    <div class="subAdminHeader2">
+        <img src="../img/headphones_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="icons">
+        <img src="../img/doc.png" alt="icons">
+        <img src="../img/notifications_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="icons">
+    </div>
+  </div>
+
+  <div class="detailDashboard">
+    <div class="childDetailDashboard1">
+      <div>
+        <p style="margin-bottom: 10px;">Available Balance: <br> <h3 style="font-weight: bolder; font-size: 18px;" id="walletBalance"></h3></p>
+        <p style="margin:10px 0;"> & Cashback 0.00</p>
+      </div>
+      <div>
+        <p id="transation" style="cursor: pointer;">Transaction History ></p>
+        
+      </div>
+      
+    </div>
+    <div class="childDetailDashboard2">
+      <div id="addMoney" style="display: flex; flex-direction: column; justify-content: end; align-items: center;">
+        <div style="background-color: white; width: 50px; padding: 5px 0; border-radius: 10px; margin: 5px 0;" >
+          <img src="../img/add_card_24dp_FILL0_wght400_GRAD0_opsz24.png"alt="" style="margin: auto; width: 30px;">
+        </div>
+        <p>Add Money</p>
+      </div>
+      <div id="withdrawMoney" style="display: flex; flex-direction: column; justify-content: end; align-items: center;">
+        <div style="background-color: white; width: 50px; padding: 5px 0; border-radius: 10px; margin: 5px 0;">
+          <img src="../img/local_atm_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="" style="margin: auto; width: 30px;">
+        </div>
+        <p>Withdraw</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="icons">
+    <div class="subIcons">
+      <div class="childIcons">
+        <div class="imgDiv">
+          <img src="../img/open_in_phone_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="icons">
+        </div>
+        <p>Airtime</p>
+      </div>
+      <div class="childIcons">
+        <div class="imgDiv">
+          <img src="../img/language_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="icons">
+        </div>
+        <p>Data</p>
+      </div>
+      <div class="childIcons">
+        <div class="imgDiv">
+          <img src="../img/rewarded_ads_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="icons">
+        </div>
+        <p>Betting</p>
+      </div>
+      <div class="childIcons">
+        <div class="imgDiv">
+          <img src="../img/desktop_windows_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="icons">
+        </div>
+        <p>Tv</p>
+      </div>
+      <div class="childIcons">
+        <div class="imgDiv">
+          <img src="../img/ev_station_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="icons">
+        </div>
+        <p>Electricity</p>
+      </div>
+      <div class="childIcons">
+        <div class="imgDiv">
+          <img src="../img/wifi_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="icons">
+        </div>
+        <p>Internet</p>
+      </div>
+      <div class="childIcons">
+        <div class="imgDiv">
+          <img src="../img/finance_chip_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="icons">
+        </div>
+        <p>Refer$Earn</p>
+      </div>
+      <div class="childIcons">
+        <div class="imgDiv">
+          <img src="../img/add_circle_24dp_FILL0_wght400_GRAD0_opsz24.png" alt="icons">
+        </div>
+        <p>More</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="transationHistory">
+    <h4>All Transactions History Here</h4>
+    <p>No Transactions yet</p>
+  </div>
+
+
+  <!-- live chat alert -->
+  <div id="useLiveChat" class="useLiveChat"> 
+    Contact the customer care to verify your identity to perform theses action.
+  </div>
+
+  
+
+
+  <!-- footer -->
+  <footer class="bg-gray-100">
+    <div style="display: flex; width: 100%; justify-content: center; align-items: center;">
+      <img style="width: 100px; margin-right: -15px;" src="https://granite-finance.github.io/granite/img/logonew-removebg-preview.png" alt="">
+      <h3>GRANITE</h3>
+    </div>
+    <p>granitetrustbankmngtspprt@gmail.com</p>
+    <p>&copycopyright 2024 by GRANITE All rights reserved</p>
+  </footer> 
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+        apiKey: "AIzaSyAaducTUSJd_asDKvIGjFKo53HPtRgRyv8",
+        authDomain: "granite-finance.firebaseapp.com",
+        projectId: "granite-finance",
+        storageBucket: "granite-finance.appspot.com",
+        messagingSenderId: "407485473046",
+        appId: "1:407485473046:web:967f3766afe657bc1a7037",
+        measurementId: "G-PBMFPLYP5T",
+        databaseURL: "https://granite-finance-default-rtdb.firebaseio.com/"
+    };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+  <script src="https://granite-finance.github.io/granite/dashboard/js/dashboard.js"></script>
+  
+<script src="https://granite-finance.github.io/granite/index.js"></script>
+
+  <!-- tawk api live chat -->
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/665ad352981b6c5647771fc0/1hv9civbu';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
+  <script type="text/javascript" src="https://granite-finance.github.io/granite/dashboard/auth.js?v=12392823"></script>
+
+  <!-- transation history notification -->
+  <div id="notification" class="notification">No transaction yet</div>
+  <script>
+    document.getElementById('transation').addEventListener('click', function() {
+            const notification = document.getElementById('notification');
+            notification.classList.add('show');
+
+            setTimeout(function() {
+                notification.classList.remove('show');
+            }, 3000); // 5 seconds
+    });
+  </script>
+
+  <script>
+    const addMoney = document.getElementById('addMoney')
+    addMoney.addEventListener('click', ()=> {
+      window.location.replace("https://granite-finance.github.io/granite/dashboard/add.html");
+    })
+
+    const withdrawMoney = document.getElementById('withdrawMoney')
+    withdrawMoney.addEventListener('click', ()=> {
+      window.location.replace("https://granite-finance.github.io/granite/dashboard/withdraw.html");
+    })
+  </script>
+
+
+
+
+<script data-cfasync="false" src="cdn-cgi\scripts\5c5dd728\cloudflare-static\email-decode.min.js"></script><script type="text/javascript">
+  var listCountries = ['United Kingdom', 'USA', 'Germany', 'France', 'Italy', 'USA', 'Australia', 'Lesotho', 'Canada', 'Argentina', 'Saudi Arabia', 'Mexico', 'Kenya', 'Maldives', 'Venezuela', 'South Africa', 'Sweden', 'India', 'South Africa', 'Italy', 'Pakistan', 'United Kingdom', 'South Africa', 'Greece', 'Cuba', 'South Africa', 'Portugal', 'Austria', 'South Africa', 'Panama', 'USA', 'South Africa', 'Netherlands', 'Switzerland', 'Belgium', 'Israel', 'Cyprus'];
+      var listUsers = ['Dirk', 'Johnny', 'Watkin ', 'Alejandro',  'Vina',  'Tony',   'Ahmed','Jackson',  'Noah', 'Aiden',  'Darren', 'Isabella', 'Aria', 'John', 'Greyson', 'Peter', 'Mohammed', 'William',
+      'Lucas', 'Amelia', 'Mason', 'Mathew', 'Richard', 'Chris', 'Mia', 'Oliver'];
+      var listPlans = ['$25,030','$30,514','$11,000','$43,250','$26,320','$73,120','$54,100', '$63,120', '$17,330', '$250,324'];
+      interval = Math.floor(Math.random() * (40000 - 8000 + 1) + 8000);
+      var run = setInterval(request, interval);
+  
+      function request() {
+          clearInterval(run);
+          interval = Math.floor(Math.random() * (63010 - 12000 + 1) + 8000);
+          var country = listCountries[Math.floor(Math.random() * listCountries.length)];
+                  var user = listUsers[Math.floor(Math.random() * listUsers.length)];
+          var plan = listPlans[Math.floor(Math.random() * listPlans.length)];
+          var msg = 'Investor <b>' + user + '</b> from  <b>' + country + '</b> just Withdrew <strong href="javascript:void(0);" onclick="javascript:void(0);">' + plan + ' </strong>';
+          $(".mgm .txt").html(msg);
+          $(".mgm").stop(true).fadeIn(2);
+          window.setTimeout(function() {
+              $(".mgm").stop(true).fadeOut(100);
+          }, 8000);
+          run = setInterval(request, interval);
+      }
+  </script>
+
+<div class="mgm" style="display: none;">
+  <div class="txt" style="color:black;">An Investor  from  <b></b> just traded with <a href="javascript:void(0);" onclick="javascript:void(0);"></a></div>
+  </div>
+
+  <style>
+    .mgm {
+        border-radius: 7px;
+        position: fixed;
+        z-index: 90;
+        bottom: 80px;
+        left: 50px;
+        background: #fff;
+        padding: 10px 27px;
+        box-shadow: 0px 5px 13px 0px rgba(0,0,0,.3);
+    }
+    .mgm a {
+        font-weight: 700;
+        display: block;
+        color:#f2d516;
+    }
+    .mgm a, .mgm a:active {
+        transition: all .2s ease;
+        color:#f2d516;
+    }
+    </style>
+
+<script data-cfasync="false" src="cdn-cgi\scripts\5c5dd728\cloudflare-static\email-decode.min.js"></script><script type="text/javascript">
+  var listCountries = ['United Kingdom', 'USA', 'Germany', 'France', 'Italy', 'USA', 'Australia', 'Lesotho', 'Canada', 'Argentina', 'Saudi Arabia', 'Mexico', 'Kenya', 'Maldives', 'Venezuela', 'South Africa', 'Sweden', 'India', 'South Africa', 'Italy', 'Pakistan', 'United Kingdom', 'South Africa', 'Greece', 'Cuba', 'South Africa', 'Portugal', 'Austria', 'South Africa', 'Panama', 'USA', 'South Africa', 'Netherlands', 'Switzerland', 'Belgium', 'Israel', 'Cyprus'];
+      var listUsers = ['Dirk', 'Johnny', 'Watkin ', 'Alejandro',  'Vina',  'Tony',   'Ahmed','Jackson',  'Noah', 'Aiden',  'Darren', 'Isabella', 'Aria', 'John', 'Greyson', 'Peter', 'Mohammed', 'William',
+      'Lucas', 'Amelia', 'Mason', 'Mathew', 'Richard', 'Chris', 'Mia', 'Oliver'];
+      var listPlans = ['$25,030','$30,514','$11,000','$43,250','$26,320','$73,120','$54,100', '$63,120', '$17,330', '$250,324'];
+      interval = Math.floor(Math.random() * (40000 - 8000 + 1) + 8000);
+      var run = setInterval(request, interval);
+  
+      function request() {
+          clearInterval(run);
+          interval = Math.floor(Math.random() * (63010 - 12000 + 1) + 8000);
+          var country = listCountries[Math.floor(Math.random() * listCountries.length)];
+                  var user = listUsers[Math.floor(Math.random() * listUsers.length)];
+          var plan = listPlans[Math.floor(Math.random() * listPlans.length)];
+          var msg = 'Investor <b>' + user + '</b> from  <b>' + country + '</b> just Withdrew <strong href="javascript:void(0);" onclick="javascript:void(0);">' + plan + ' </strong>';
+          $(".mgm .txt").html(msg);
+          $(".mgm").stop(true).fadeIn(2);
+          window.setTimeout(function() {
+              $(".mgm").stop(true).fadeOut(100);
+          }, 8000);
+          run = setInterval(request, interval);
+      }
+  </script>
+  
+  
+  <div class="mgm" style="display: none;">
+  <div class="txt" style="color:black;">An Investor  from  <b></b> just traded with <a href="javascript:void(0);" onclick="javascript:void(0);"></a></div>
+  </div>
+  
+  <style>
+  .mgm {
+      border-radius: 7px;
+      position: fixed;
+      z-index: 90;
+      bottom: 80px;
+      left: 50px;
+      background: #fff;
+      padding: 10px 27px;
+      box-shadow: 0px 5px 13px 0px rgba(0,0,0,.3);
+  }
+  .mgm a {
+      font-weight: 700;
+      display: block;
+      color:#f2d516;
+  }
+  .mgm a, .mgm a:active {
+      transition: all .2s ease;
+      color:#f2d516;
+  }
+  </style>
+  <script data-cfasync="false" src="cdn-cgi\scripts\5c5dd728\cloudflare-static\email-decode.min.js"></script><script data-cfasync="false" src="cdn-cgi\scripts\5c5dd728\cloudflare-static\email-decode.min.js"></script><script type="text/javascript">
+  var listCountries = ['United Kingdom', 'USA', 'Germany', 'France', 'Italy', 'USA', 'Australia', 'Lesotho', 'Canada', 'Argentina', 'Saudi Arabia', 'Mexico', 'Kenya', 'Maldives', 'Venezuela', 'South Africa', 'Sweden', 'India', 'South Africa', 'Italy', 'Pakistan', 'United Kingdom', 'South Africa', 'Greece', 'Cuba', 'South Africa', 'Portugal', 'Austria', 'South Africa', 'Panama', 'USA', 'South Africa', 'Netherlands', 'Switzerland', 'Belgium', 'Israel', 'Cyprus'];
+  var listUsers = [ 'Christopher',
+      'Ryan',
+      'Ethan',
+      'John',
+      'Zoey',
+      'Sarah',
+      'Michelle',
+      'Samantha',
+       'Walker',
+      'Thompson',
+      'Anderson',
+      'Johnson',
+      'Tremblay',
+      'Peltier',
+      'Cunningham',
+      'Simpson',
+      'Mercado',
+      'Sellers',
+       'Abbott',
+    'Acevedo',
+    'Acosta',
+    'Adams',
+    'Adkins',
+    'Aguilar',
+    'Aguirre',
+    'Albert',
+    'Alexander',
+    'Alford',
+    'Allen',
+    'Allison',
+    'Alston',
+    'Alvarado',
+    'Alvarez',
+    'Anderson',
+    'Andrews',
+    'Anthony',
+    'Armstrong',
+    'Arnold',
+    'Ashley',
+    'Atkins',
+    'Atkinson',
+    'Austin',
+    'Avery',
+    'Avila',
+    'Ayala',
+    'Ayers',
+    'Bailey',
+    'Baird',
+    'Baker',
+    'Baldwin',
+    'Ball',
+    'Ballard',
+    'Banks',
+    'Barber',
+    'Barker',
+    'Barlow',
+    'Barnes',
+    'Barnett',
+    'Barr',
+    'Barrera',
+    'Barrett',
+    'Barron',
+    'Barry',
+    'Bartlett',
+    'Barton',
+    'Bass',
+    'Bates',
+    'Battle',
+    'Bauer',
+    'Baxter',
+    'Beach',
+    'Bean',
+    'Beard',
+    'Beasley',
+    'Beck',
+    'Becker',
+    'Bell',
+    'Bender',
+    'Benjamin',
+    'Bennett',
+    'Benson',
+    'Bentley',
+    'Benton',
+    'Berg',
+    'Berger',
+    'Bernard',
+    'Berry',
+    'Best',
+    'Bird',
+    'Bishop',
+    'Black',
+    'Blackburn',
+    'Blackwell',
+    'Blair',
+    'Blake',
+    'Blanchard',
+    'Blankenship',
+    'Blevins',
+    'Bolton',
+    'Bond',
+    'Bonner',
+    'Booker',
+    'Boone',
+    'Booth',
+    'Bowen',
+    'Bowers',
+    'Bowman',
+    'Boyd',
+    'Boyer',
+    'Boyle',
+    'Bradford',
+    'Bradley',
+    'Bradshaw',
+    'Brady',
+    'Branch',
+    'Bray',
+    'Brennan',
+    'Brewer',
+    'Bridges',
+    'Briggs',
+    'Bright',
+    'Britt',
+    'Brock',
+    'Brooks',
+    'Brown',
+    'Browning',
+    'Bruce',
+    'Bryan',
+    'Bryant',
+    'Buchanan',
+    'Buck',
+    'Buckley',
+    'Buckner',
+    'Bullock',
+    'Burch',
+    'Burgess',
+    'Burke',
+    'Burks',
+    'Burnett',
+    'Burns',
+    'Burris',
+    'Burt',
+    'Burton',
+    'Bush',
+    'Butler',
+    'Byers',
+    'Byrd',
+    'Cabrera',
+    'Cain',
+    'Calderon',
+    'Caldwell',
+    'Calhoun',
+    'Callahan',
+    'Camacho',
+    'Cameron',
+    'Campbell',
+    'Campos',
+    'Cannon',
+    'Cantrell',
+    'Cantu',
+    'Cardenas',
+    'Carey',
+    'Carlson',
+    'Carney',
+    'Carpenter',
+    'Carr',
+    'Carrillo',
+    'Carroll',
+    'Carson',
+    'Carter',
+    'Carver',
+    'Case',
+    'Casey',
+    'Cash',
+    'Castaneda',
+    'Castillo',
+    'Castro',
+    'Cervantes',
+    'Chambers',
+    'Chan',
+    'Chandler',
+    'Chaney',
+    'Chang',
+    'Chapman',
+    'Charles',
+    'Chase',
+    'Chavez',
+    'Chen',
+    'Cherry',
+    'Christensen',
+    'Christian',
+    'Church',
+    'Clark',
+    'Clarke',
+    'Clay',
+    'Clayton',
+    'Clements',
+    'Clemons',
+    'Cleveland',
+    'Cline',
+    'Cobb',
+    'Cochran',
+    'Coffey',
+    'Cohen',
+    'Cole',
+    'Coleman',
+    'Collier',
+    'Collins',
+    'Colon',
+    'Combs',
+    'Compton',
+    'Conley',
+    'Conner',
+    'Conrad',
+    'Contreras',
+    'Conway',
+    'Cook',
+    'Cooke',
+    'Cooley',
+    'Cooper',
+    'Copeland',
+    'Cortez',
+    'Cote',
+    'Cotton',
+    'Cox',
+    'Craft',
+    'Craig',
+    'Crane',
+    'Crawford',
+    'Crosby',
+    'Cross',
+    'Cruz',
+    'Cummings',
+    'Cunningham',
+    'Curry',
+    'Curtis',
+    'Dale',
+    'Dalton',
+    'Daniel',
+    'Daniels',
+    'Daugherty',
+    'Davenport',
+    'David',
+    'Davidson',
+    'Davis',
+    'Dawson',
+    'Day',
+    'Dean',
+    'Decker',
+    'Dejesus',
+    'Delacruz',
+    'Delaney',
+    'Deleon',
+    'Delgado',
+    'Dennis',
+    'Diaz',
+    'Dickerson',
+    'Dickson',
+    'Dillard',
+    'Dillon',
+    'Dixon',
+    'Dodson',
+    'Dominguez',
+    'Donaldson',
+    'Donovan',
+    'Dorsey',
+    'Dotson',
+    'Douglas',
+    'Downs',
+    'Doyle',
+    'Drake',
+    'Dudley',
+    'Duffy',
+    'Duke',
+    'Duncan',
+    'Dunlap',
+    'Dunn',
+    'Duran',
+    'Durham',
+    'Dyer',
+    'Eaton',
+    'Edwards',
+    'Elliott',
+    'Ellis',
+    'Ellison',
+    'Emerson',
+    'England',
+    'English',
+    'Erickson',
+    'Espinoza',
+    'Estes',
+    'Estrada',
+    'Evans',
+      
+  ];
+  $names2 = array(
+       'Everett',
+    'Ewing',
+    'Farley',
+    'Farmer',
+    'Farrell',
+    'Faulkner',
+    'Ferguson',
+    'Fernandez',
+    'Ferrell',
+    'Fields',
+    'Figueroa',
+    'Finch',
+    'Finley',
+    'Fischer',
+    'Fisher',
+    'Fitzgerald',
+    'Fitzpatrick',
+    'Fleming',
+    'Fletcher',
+    'Flores',
+    'Flowers',
+    'Floyd',
+    'Flynn',
+    'Foley',
+    'Forbes',
+    'Ford',
+    'Foreman',
+    'Foster',
+    'Fowler',
+    'Fox',
+    'Francis',
+    'Franco',
+    'Frank',
+    'Franklin',
+    'Franks',
+    'Frazier',
+    'Frederick',
+    'Freeman',
+    'French',
+    'Frost',
+    'Fry',
+    'Frye',
+    'Fuentes',
+    'Fuller',
+    'Fulton',
+    'Gaines',
+    'Gallagher',
+    'Gallegos',
+    'Galloway',
+    'Gamble',
+    'Garcia',
+    'Gardner',
+    'Garner',
+    'Garrett',
+    'Garrison',
+    'Garza',
+    'Gates',
+    'Gay',
+    'Gentry',
+    'George',
+    'Gibbs',
+    'Gibson',
+    'Gilbert',
+    'Giles',
+    'Gill',
+    'Gillespie',
+    'Gilliam',
+    'Gilmore',
+    'Glass',
+    'Glenn',
+    'Glover',
+    'Goff',
+    'Golden',
+    'Gomez',
+    'Gonzales',
+    'Gonzalez',
+    'Good',
+    'Goodman',
+    'Goodwin',
+    'Gordon',
+    'Gould',
+    'Graham',
+    'Grant',
+    'Graves',
+    'Gray',
+    'Green',
+    'Greene',
+    'Greer',
+    'Gregory',
+    'Griffin',
+    'Griffith',
+    'Grimes',
+    'Gross',
+    'Guerra',
+    'Guerrero',
+    'Guthrie',
+    'Gutierrez',
+    'Guy',
+    'Guzman',
+    'Hahn',
+    'Hale',
+    'Haley',
+    'Hall',
+    'Hamilton',
+    'Hammond',
+    'Hampton',
+    'Hancock',
+    'Haney',
+    'Hansen',
+    'Hanson',
+    'Hardin',
+    'Harding',
+    'Hardy',
+    'Harmon',
+    'Harper',
+    'Harrell',
+    'Harrington',
+    'Harris',
+    'Harrison',
+    'Hart',
+    'Hartman',
+    'Harvey',
+    'Hatfield',
+    'Hawkins',
+    'Hayden',
+    'Hayes',
+    'Haynes',
+    'Hays',
+    'Head',
+    'Heath',
+    'Hebert',
+    'Henderson',
+    'Hendricks',
+    'Hendrix',
+    'Henry',
+    'Hensley',
+    'Henson',
+    'Herman',
+    'Hernandez',
+    'Herrera',
+    'Herring',
+    'Hess',
+    'Hester',
+    'Hewitt',
+    'Hickman',
+    'Hicks',
+    'Higgins',
+    'Hill',
+    'Hines',
+    'Hinton',
+    'Hobbs',
+    'Hodge',
+    'Hodges',
+    'Hoffman',
+    'Hogan',
+    'Holcomb',
+    'Holden',
+    'Holder',
+    'Holland',
+    'Holloway',
+    'Holman',
+    'Holmes',
+    'Holt',
+    'Hood',
+    'Hooper',
+    'Hoover',
+    'Hopkins',
+    'Hopper',);
+       var listPlans = ['$54,360','$15,670','$110,380','$174,560','$236,400','$356,842','$43,620', '$62,736', '$38,500', '$25,634'];
+      interval = Math.floor(Math.random() * (73030 - 6000 + 1) + 4000);
+      var run = setInterval(request, interval);
+  
+      function request() {
+          clearInterval(run);
+          interval = Math.floor(Math.random() * (40000 - 8000 + 1) + 8000);
+          var country = listCountries[Math.floor(Math.random() * listCountries.length)];
+          var user = listUsers[Math.floor(Math.random() * listUsers.length)];
+          var plan = listPlans[Math.floor(Math.random() * listPlans.length)];
+          var msg = 'Investor <b>' + user + '</b> from  <b>' + country + '</b> just Withdrew <strong href="javascript:void(0);" onclick="javascript:void(0);">' + plan + ' </strong>';
+          $(".mgm .txt").html(msg);
+          $(".mgm").stop(true).fadeIn(2);
+          window.setTimeout(function() {
+              $(".mgm").stop(true).fadeOut(100);
+          }, 8000);
+          run = setInterval(request, interval);
+      }
+  </script>
+  
+  <style>
+  .mgm {
+      border-radius: 7px;
+      position: fixed;
+      z-index: 90;
+      bottom: 80px;
+      left: 50px;
+      background: #fff;
+      padding: 10px 27px;
+      box-shadow: 0px 5px 13px 0px rgba(0,0,0,.3);
+  }
+  .mgm a {
+      font-weight: 700;
+      display: block;
+      color:#f2d516;
+  }
+  .mgm a, .mgm a:active {
+      transition: all .2s ease;
+      color:#f2d516;
+  }
+  </style>
+  <script data-cfasync="false" src="cdn-cgi\scripts\5c5dd728\cloudflare-static\email-decode.min.js"></script><script type="text/javascript">
+  var listCountries = ['United Kingdom', 'USA', 'Germany', 'France', 'Italy', 'USA', 'Australia', 'Lesotho', 'Canada', 'Argentina', 'Saudi Arabia', 'Mexico', 'Kenya', 'Maldives', 'Venezuela', 'South Africa', 'Sweden', 'India', 'South Africa', 'Italy', 'Pakistan', 'United Kingdom', 'South Africa', 'Greece', 'Cuba', 'South Africa', 'Portugal', 'Austria', 'South Africa', 'Panama', 'USA', 'South Africa', 'Netherlands', 'Switzerland', 'Belgium', 'Israel', 'Cyprus'];
+   var listUsers = ['Dirk', 'Aaran', 'Aaren', 'Aarez', 'Aarman', 'Aaron', 'Aaron-James', 'Aarron', 'Aaryan', 'Aaryn', 'Aayan', 'Aazaan', 'Abaan', 'Abbas', 'Abdallah', 'Abdalroof', 'Abdihakim', 'Abdirahman', 'Abdisalam', 'Abdul', 'Abdul-Aziz', 'Abdulbasir', 'Abdulkadir', 'Abdulkarem', 'Abdulkhader', 'Abdullah', 'Abdul-Majeed', 'Abdulmalik', 'Abdul-Rehman', 'Abdur', 'Abdurraheem', 'Abdur-Rahman', 'Abdur-Rehmaan', 'Abel', 'Abhinav', 'Abhisumant', 'Abid', 'Abir', 'Abraham', 'Abu', 'Abubakar', 'Ace', 'Adain', 'Adam', 'Adam-James', 'Addison', 'Addisson', 'Adegbola', 'Adegbolahan', 'Aden', 'Adenn', 'Adie', 'Adil', 'Aditya', 'Adnan', 'Adrian', 'Adrien', 'Aedan', 'Aedin', 'Aedyn', 'Aeron', 'Afonso', 'Ahmad', 'Ahmed', 'Ahmed-Aziz', 'Ahoua', 'Ahtasham', 'Aiadan', 'Aidan', 'Aiden', 'Aiden-Jack', 'Aiden-Vee', 'Aidian', 'Aidy', 'Ailin', 'Aiman', 'Ainsley', 'Ainslie', 'Airen', 'Airidas', 'Airlie', 'AJ', 'Ajay', 'A-Jay', 'Ajayraj', 'Akan', 'Akram', 'Al', 'Ala', 'Alan', 'Alanas', 'Alasdair', 'Alastair', 'Alber', 'Albert', 'Albie', 'Aldred', 'Alec', 'Aled', 'Aleem', 'Aleksandar', 'Aleksander', 'Aleksandr', 'Aleksandrs', 'Alekzander', 'Alessandro', 'Alessio', 'Alex', 'Alexander', 'Alexei', 'Alexx', 'Alexzander', 'Alf', 'Alfee', 'Alfie', 'Alfred', 'Alfy', 'Alhaji', 'Al-Hassan', 'Ali', 'Aliekber', 'Alieu', 'Alihaider', 'Alisdair', 'Alishan', 'Alistair', 'Alistar', 'Alister', 'Aliyaan', 'Allan', 'Allan-Laiton', 'Allen', 'Allesandro', 'Allister', 'Ally', 'Alphonse', 'Altyiab', 'Alum', 'Alvern', 'Alvin', 'Alyas', 'Amaan', 'Aman', 'Amani', 'Ambanimoh', 'Ameer', 'Amgad', 'Ami', 'Amin', 'Amir', 'Ammaar', 'Ammar', 'Ammer', 'Amolpreet', 'Amos', 'Amrinder', 'Amrit', 'Amro', 'Anay', 'Andrea', 'Andreas', 'Andrei', 'Andrejs', 'Andrew', 'Andy', 'Anees', 'Anesu', 'Angel', 'Angelo', 'Angus', 'Anir', 'Anis', 'Anish', 'Anmolpreet', 'Annan', 'Anndra', 'Anselm', 'Anthony', 'Anthony-John', 'Antoine', 'Anton', 'Antoni', 'Antonio', 'Antony', 'Antonyo', 'Anubhav', 'Aodhan', 'Aon', 'Aonghus', 'Apisai', 'Arafat', 'Aran', 'Arandeep', 'Arann', 'Aray', 'Arayan', 'Archibald', 'Archie', 'Arda', 'Ardal', 'Ardeshir', 'Areeb', 'Areez', 'Aref', 'Arfin', 'Argyle', 'Argyll', 'Ari', 'Aria', 'Arian', 'Arihant', 'Aristomenis', 'Aristotelis', 'Arjuna', 'Arlo', 'Armaan', 'Arman', 'Armen', 'Arnab', 'Arnav', 'Arnold', 'Aron', 'Aronas', 'Arran', 'Arrham', 'Arron', 'Arryn', 'Arsalan', 'Artem', 'Arthur', 'Artur', 'Arturo', 'Arun', 'Arunas', 'Arved', 'Arya', 'Aryan', 'Aryankhan', 'Aryian', 'Aryn', 'Asa', 'Asfhan', 'Ash', 'Ashlee-jay', 'Ashley', 'Ashton', 'Ashton-Lloyd', 'Ashtyn', 'Ashwin', 'Asif', 'Asim', 'Aslam', 'Asrar', 'Ata', 'Atal', 'Atapattu', 'Ateeq', 'Athol', 'Athon', 'Athos-Carlos', 'Atli', 'Atom', 'Attila', 'Aulay', 'Aun', 'Austen', 'Austin', 'Avani', 'Averon', 'Avi', 'Avinash', 'Avraham', 'Awais', 'Awwal', 'Axel', 'Ayaan', 'Ayan', 'Aydan', 'Ayden', 'Aydin', 'Aydon', 'Ayman', 'Ayomide', 'Ayren', 'Ayrton', 'Aytug', 'Ayub', 'Ayyub', 'Azaan', 'Azedine', 'Azeem', 'Azim', 'Aziz', 'Azlan', 'Azzam', 'Azzedine', 'Babatunmise', 'Babur', 'Bader', 'Badr', 'Badsha', 'Bailee', 'Bailey', 'Bailie', 'Bailley', 'Baillie', 'Baley', 'Balian', 'Banan', 'Barath', 'Barkley', 'Barney', 'Baron', 'Barrie', 'Barry', 'Bartlomiej', 'Bartosz', 'Basher', 'Basile', 'Baxter', 'Baye', 'Bayley', 'Beau', 'Beinn', 'Bekim', 'Believe', 'Ben', 'Bendeguz', 'Benedict', 'Benjamin', 'Benjamyn', 'Benji', 'Benn', 'Bennett', 'Benny', 'Benoit', 'Bentley', 'Berkay', 'Bernard', 'Bertie', 'Bevin', 'Bezalel', 'Bhaaldeen', 'Bharath', 'Bilal', 'Bill', 'Billy', 'Binod', 'Bjorn', 'Blaike', 'Blaine', 'Blair', 'Blaire', 'Blake', 'Blazej', 'Blazey', 'Blessing', 'Blue', 'Blyth', 'Bo', 'Boab', 'Bob', 'Bobby', 'Bobby-Lee', 'Bodhan', 'Boedyn', 'Bogdan', 'Bohbi', 'Bony', 'Bowen', 'Bowie', 'Boyd', 'Bracken', 'Brad', 'Bradan', 'Braden', 'Bradley', 'Bradlie', 'Bradly', 'Brady', 'Bradyn', 'Braeden', 'Braiden', 'Brajan', 'Brandan', 'Branden', 'Brandon', 'Brandonlee', 'Brandon-Lee', 'Brandyn', 'Brannan', 'Brayden', 'Braydon', 'Braydyn', 'Breandan', 'Brehme', 'Brendan', 'Brendon', 'Brendyn', 'Breogan', 'Bret', 'Brett', 'Briaddon', 'Brian', 'Brodi', 'Brodie', 'Brody', 'Brogan', 'Broghan', 'Brooke', 'Brooklin', 'Brooklyn', 'Bruce', 'Bruin', 'Bruno', 'Brunon', 'Bryan', 'Bryce', 'Bryden', 'Brydon', 'Brydon-Craig', 'Bryn', 'Brynmor', 'Bryson', 'Buddy', 'Bully', 'Burak', 'Burhan', 'Butali', 'Butchi', 'Byron', 'Cabhan', 'Cadan', 'Cade', 'Caden', 'Cadon', 'Cadyn', 'Caedan', 'Caedyn', 'Cael', 'Caelan', 'Caelen', 'Caethan', 'Cahl', 'Cahlum', 'Cai', 'Caidan', 'Caiden', 'Caiden-Paul', 'Caidyn', 'Caie', 'Cailaen', 'Cailean', 'Caileb-John', 'Cailin', 'Cain', 'Caine', 'Cairn', 'Cal', 'Calan', 'Calder', 'Cale', 'Calean', 'Caleb', 'Calen', 'Caley', 'Calib', 'Calin', 'Callahan', 'Callan', 'Callan-Adam', 'Calley', 'Callie', 'Callin', 'Callum', 'Callun', 'Callyn', 'Calum', 'Calum-James', 'Calvin', 'Cambell', 'Camerin', 'Cameron', 'Campbel', 'Campbell', 'Camron', 'Caolain', 'Caolan', 'Carl', 'Carlo', 'Carlos', 'Carrich', 'Carrick', 'Carson', 'Carter', 'Carwyn', 'Casey', 'Casper', 'Cassy', 'Cathal', 'Cator', 'Cavan', 'Cayden', 'Cayden-Robert', 'Cayden-Tiamo', 'Ceejay', 'Ceilan', 'Ceiran', 'Ceirin', 'Ceiron', 'Cejay', 'Celik', 'Cephas', 'Cesar', 'Cesare', 'Chad', 'Chaitanya', 'Chang-Ha', 'Charles', 'Charley', 'Charlie', 'Charly', 'Chase', 'Che', 'Chester', 'Chevy', 'Chi', 'Chibudom', 'Chidera', 'Chimsom', 'Chin', 'Chintu', 'Chiqal', 'Chiron', 'Chris', 'Chris-Daniel', 'Chrismedi', 'Christian', 'Christie', 'Christoph', 'Christopher', 'Christopher-Lee', 'Christy', 'Chu', 'Chukwuemeka', 'Cian', 'Ciann', 'Ciar', 'Ciaran', 'Ciarian', 'Cieran', 'Cillian', 'Cillin', 'Cinar', 'CJ', 'C-Jay', 'Clark', 'Clarke', 'Clayton', 'Clement', 'Clifford', 'Clyde', 'Cobain', 'Coban', 'Coben', 'Cobi', 'Cobie', 'Coby', 'Codey', 'Codi', 'Codie', 'Cody', 'Cody-Lee', 'Coel', 'Cohan', 'Cohen', 'Colby', 'Cole', 'Colin', 'Coll', 'Colm', 'Colt', 'Colton', 'Colum', 'Colvin', 'Comghan', 'Conal', 'Conall', 'Conan', 'Conar', 'Conghaile', 'Conlan', 'Conley', 'Conli', 'Conlin', 'Conlly', 'Conlon', 'Conlyn', 'Connal', 'Connall', 'Connan', 'Connar', 'Connel', 'Connell', 'Conner', 'Connolly', 'Connor', 'Connor-David', 'Conor', 'Conrad', 'Cooper', 'Copeland', 'Coray', 'Corben', 'Corbin', 'Corey', 'Corey-James', 'Corey-Jay', 'Cori', 'Corie', 'Corin', 'Cormac', 'Cormack', 'Cormak', 'Corran', 'Corrie', 'Cory', 'Cosmo', 'Coupar', 'Craig', 'Craig-James', 'Crawford', 'Creag', 'Crispin', 'Cristian', 'Crombie', 'Cruiz', 'Cruz', 'Cuillin', 'Cullen', 'Cullin', 'Curtis', 'Cyrus', 'Daanyaal', 'Daegan', 'Daegyu', 'Dafydd', 'Dagon', 'Dailey', 'Daimhin', 'Daithi', 'Dakota', 'Daksh', 'Dale', 'Dalong', 'Dalton', 'Damian', 'Damien', 'Damon', 'Dan', 'Danar', 'Dane', 'Danial', 'Daniel', 'Daniele', 'Daniel-James', 'Daniels', 'Daniil', 'Johnny', 'Watkin ', 'Alejandro',  'Vina',  'Tony',   'Ahmed','Jackson',  'Noah', 'Aiden',  'Darren', 'Isabella', 'Aria', 'John', 'Greyson', 'Peter', 'Mohammed', 'William',
+      'Lucas', 'Amelia', 'Mason', 'Mathew', 'Richard', 'Chris', 'Mia', 'Oliver'];
+      var listPlans = ['$54,360','$15,670','$110,380','$174,560','$236,400','$356,842','$43,620', '$62,736', '$38,500', '$25,634'];
+      interval = Math.floor(Math.random() * (73030 - 6000 + 1) + 4000);
+      var run = setInterval(request, interval);
+  
+      function request() {
+          clearInterval(run);
+          interval = Math.floor(Math.random() * (40000 - 8000 + 1) + 8000);
+          var country = listCountries[Math.floor(Math.random() * listCountries.length)];
+          var user = listUsers[Math.floor(Math.random() * listUsers.length)];
+          var plan = listPlans[Math.floor(Math.random() * listPlans.length)];
+          var msg = 'Investor <b>' + user + '</b>  from  <b>' + country + '</b> just Withdrew <strong href="javascript:void(0);" onclick="javascript:void(0);">' + plan + ' </strong>';
+          $(".mgm .txt").html(msg);
+          $(".mgm").stop(true).fadeIn(2);
+          window.setTimeout(function() {
+              $(".mgm").stop(true).fadeOut(100);
+          }, 8000);
+          run = setInterval(request, interval);
+      }
+  </script>
+    
+
+    
+</body>
+</html>

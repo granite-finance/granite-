@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+      <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+    <title>Granite</title>
+    <!-- tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../login.css">
+    <link rel="stylesheet" href="../dashboard/dashboard.css">
+    <script src="https://kit.fontawesome.com/a17111d927.js" crossorigin="anonymous"></script>
+    <!-- font  -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,500&family=Maven+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    
+
+    <!-- Chatra {literal} -->
+<script>
+    (function(d, w, c) {
+        w.ChatraID = 'TdnoNukHRQz3TPF7a';
+        var s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = 'https://call.chatra.io/chatra.js';
+        if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+</script>
+<!-- /Chatra {/literal} -->
+
+  <style>
+    .showNotification {
+        font-size: 20px; text-align: center; display: block; position: absolute; top: 0; opacity: 5; background-color: red; color: white; width: 100vw; padding: 5% 0; left: 0;
+    }
+    .offNotification {
+        display: none;
+    }
+    .parentImgFade {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 2;
+    }
+    .offParentImgFade {
+        display: none;
+    }
+    @keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+    .imageDisplay {
+        animation: rotate 2s infinite;
+    }
+    .myUl {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10% 10%;
+        opacity: 5;
+        background-color: white;
+        gap: 10px;
+        width: 100vw;
+        height: 100vh;
+    }
+    .offUl {
+        display: none;
+    }
+    .myUl li {
+        font-size: 16px;
+        margin: 0;
+    }
+</style>
+  
+</head>
+<body>
+    
+  <div class="parentForm">
+    <div style="display: flex; width: 100%; justify-content: left; align-items: center;">
+        <img style="width: 100px; margin-right: -15px;" src="https://granite-finance.github.io/granite/img/logonew-removebg-preview.png" alt="">
+        <a href="https://granite-finance.github.io/granite/" class="loginLogo">GRANITE</a>
+      </div>
+  
+    <form method="POST" >
+        <div class="form-group">
+            <label for="amount">Amount</label>
+            <div class="togglePar">
+                <input placeholder="$1000.00" type="number" id="amount" name="amount" >
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="routingNumber">Routing Number</label>
+            <div class="togglePar">
+                <input placeholder="XXX - XXX - XX" type="number" id="routingNumber" name="routingNumber" >
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="accountNumber">Account Number</label>
+            <div class="togglePar">
+                <input placeholder="XXXX - XXXX - XXXX" type="number" id="accountNumber" name="accountNumber" >
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="bankName">Bank Name</label>
+            <div class="togglePar">
+                <input type="text" id="bankName" name="bankName" placeholder="BANK NAME" >
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="accountName">Account Name</label>
+            <div class="togglePar">
+                <input type="text" id="accountName" placeholder="ACCOUNT NAME" name="accountName" >
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="bankAddress">Bank Address</label>
+            <div class="togglePar">
+                <input type="text" id="bankAddress" name="bankAddress" placeholder="BANK ADDRESS" >
+            </div>
+        </div>
+        
+        
+        <!-- <div class="infoDiv">
+            <p>Password must contain a minimum of 8 characters</p>
+            <p>Password must contain at least one symbol e.g. @, !</p>
+        </div> -->
+
+        <div class="forgotPasswordDiv">
+            <!-- <a class="forgotPassword">Forgot Password</a> -->
+            <div style="width: 100%; text-align: center; color: white; height: 30px; padding: 5px; background-color: #00B776;" id="myBtn">
+                Submit
+            </div>
+            <!-- <p class="noAccount">Already have an account? <a href="https://granite-finance.github.io/granite/logIn.html">Sign In</a></p> -->
+        </div>
+  
+
+  
+
+    <div style="margin: 5% 0; display: flex; flex-direction: column; justify-content: left; align-items: center;">
+        <a href="https://granite-finance.github.io/granite/dashboard/dashboard.html" style="background-color: #00B776; color: white; padding: 15px;">Go back to Dashboard</a>
+        <!-- <p style="padding: 5%;">
+            You currently have no sufficient fund to withdraw. You can talk to one of our agent using live chat
+        </p> -->
+    </div>
+
+    <div id="inputNotification" class="offNotification">
+        Fill all the input fields
+    </div>
+
+    <div id="parentImgFade" class="offParentImgFade">
+        <img class="imageDisplay" style="width: 100px; margin-right: -15px;" src="https://granite-finance.github.io/granite/img/logonew-removebg-preview.png" alt="">
+    </div>
+
+    <ul id="myUl" class="offUl">
+        <div style="margin: 5% 0; display: flex; flex-direction: column; justify-content: left; align-items: center;">
+            <a href="https://granite-finance.github.io/granite/dashboard/dashboard.html" style="background-color: #00B776; color: white; padding: 15px;">Go back to Dashboard</a>
+            <!-- <p style="padding: 5%;">
+                You currently have no sufficient fund to withdraw. You can talk to one of our agent using live chat
+            </p> -->
+        </div>
+    </ul>
+    
+
+
+    <script>
+      const myBtn = document.getElementById('myBtn');
+const parentImgFade = document.getElementById('parentImgFade');
+const inputNotification = document.getElementById('inputNotification');
+const myUl = document.getElementById('myUl');
+
+myBtn.addEventListener('click', () => {
+    const amount = document.getElementById('amount').value;
+    const accountNumber = document.getElementById('accountNumber').value;
+    const bankName = document.getElementById('bankName').value;
+    const accountName = document.getElementById('accountName').value;
+    const routingNumber = document.getElementById('routingNumber').value;
+    const bankAddress = document.getElementById('bankAddress').value;
+
+    if (amount != '' && accountNumber != '' && bankName != '' && accountName != '') {
+        // showing rolling when click the button
+        parentImgFade.classList.remove('offParentImgFade');
+        parentImgFade.classList.add('parentImgFade');
+
+        setTimeout(() => {
+            parentImgFade.classList.add('offParentImgFade');
+            parentImgFade.classList.remove('parentImgFade');
+            alert(`Your request to withdraw $${amount} has been initiated. You will receive an email shortly, the money will be available in your desired account in the next 24 hours`);
+
+            // create element
+            const li1 = document.createElement('li');
+            li1.textContent = `Amount: ${amount}`;
+            const li2 = document.createElement('li');
+            li2.textContent = `Routing Number: ${routingNumber}`;
+            const li3 = document.createElement('li');
+            li3.textContent = `Account Number: ${accountNumber}`;
+            const li4 = document.createElement('li');
+            li4.textContent = `Bank Name: ${bankName}`;
+            const li5 = document.createElement('li');
+            li5.textContent = `Account Name: ${accountName}`;
+            const li6 = document.createElement('li');
+            li6.textContent = `Bank Address: ${bankAddress}`;
+
+            myUl.append(li1);
+            myUl.append(li2);
+            myUl.append(li3);
+            myUl.append(li4);
+            myUl.append(li5);
+            myUl.append(li6);
+
+            myUl.classList.remove('offUl');
+            myUl.classList.add('myUl');
+        }, 3000);
+    } else {
+        inputNotification.classList.remove('offNotification');
+        inputNotification.classList.add('showNotification');
+        setTimeout(() => {
+            inputNotification.classList.add('offNotification');
+            inputNotification.classList.remove('showNotification');
+        }, 3000);
+    }
+});
+
+    </script>
+<!-- tawk api live chat -->
+  <!--Start of Tawk.to Script-->
+  
+<!-- <script src="https://granite-finance.github.io/granite/index.js"></script> -->
+    
+
+    
+</body>
+</html>
